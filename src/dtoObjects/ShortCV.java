@@ -3,84 +3,84 @@ package dtoObjects;
 import java.util.List;
 
 public class ShortCV {
-	private String Name;
-	private Integer Phone;
-	private Integer Age;
-	private String Gender;
-	private String Email;
-	private String PrefLocation;
-	private String Location;
-	private String Objective;
-	private String Industry;
-	private List<String> Language;
-	private List<String> Skills;
+	private String name;
+	private Integer phone;
+	private Integer age;
+	private String gender;
+	private String email;
+	private String prefLocation;
+	private String location;
+	private String objective;
+	private String tarIndustry;
+	private List<String> language;
+	private List<String> skills;
 	
 	
 	public String getName() {
-		return Name;
+		return name;
 	}
 	public void setName(String Name) {
-		this.Name = Name;
+		this.name = Name;
 	}
 	public Integer getPhone() {
-		return Phone;
+		return phone;
 	}
 	public void setPhone(Integer phone) {
-		Phone = phone;
+		this.phone = phone;
 	}
 	public Integer getAge() {
-		return Age;
+		return age;
 	}
 	public void setAge(Integer age) {
-		Age = age;
+		this.age = age;
 	}
 	public String getGender() {
-		return Gender;
+		return gender;
 	}
 	public void setGender(String gender) {
-		Gender = gender;
+		this.gender = gender;
 	}
 	public String getEmail() {
-		return Email;
+		return email;
 	}
 	public void setEmail(String email) {
-		Email = email;
+		this.email = email;
 	}
 	public String getPrefLocation() {
-		return PrefLocation;
+		return prefLocation;
 	}
 	public void setPrefLocation(String prefLocation) {
-		PrefLocation = prefLocation;
+		this.prefLocation = prefLocation;
 	}
 	public String getLocation() {
-		return Location;
+		return location;
 	}
 	public void setLocation(String location) {
-		Location = location;
+		this.location = location;
 	}
 	public String getObjective() {
-		return Objective;
+		return objective;
 	}
 	public void setObjective(String objective) {
-		Objective = objective;
+		this.objective = objective;
 	}
 	public String getIndustry() {
-		return Industry;
+		return tarIndustry;
 	}
 	public void setIndustry(String industry) {
-		Industry = industry;
+		this.tarIndustry = industry;
 	}
 	public List<String> getLanguage() {
-		return Language;
+		return language;
 	}
 	public void setLanguage(List<String> language) {
-		Language = language;
+		this.language = language;
 	}
 	public List<String> getSkills() {
-		return Skills;
+		return skills;
 	}
 	public void setSkills(List<String> skills) {
-		Skills = skills;
+		this.skills = skills;
 	}
 	
 }
