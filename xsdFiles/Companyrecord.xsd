@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+
+            targetNamespace="http://www.employmentservicecompany.org/Employment_Records.xsd"
+
+            xmlns:tns="http://www.employmentservicecompany.org/Employment_Records.xsd"
+            elementFormDefault="qualified">
+
+    <xsd:element name="Employment_Records">
+
+        <xsd:complexType>
+
+            <xsd:sequence>
+
+                <xsd:element name="Name" type="xsd:string" minOccurs="1"/>
+
+                <xsd:element name="Records">
+
+                    <xsd:complexType>
+
+                        <xsd:sequence>
+
+                            <xsd:element name="Record" minOccurs="1" maxOccurs="30">
+
+                                <xsd:complexType>
+
+                                    <xsd:sequence>
+
+                                        <xsd:element name="Company_Name" type="xsd:string"
+
+                                                     minOccurs="1" maxOccurs="1" />
+
+                                        <xsd:element name="Industry" type="tns:Industry_Type"
+
+                                                     minOccurs="1" maxOccurs="1" />
+
+                                        <xsd:element name="Designation" type="tns:Designation_Type"
+
+                                                     minOccurs="1" maxOccurs="1" />
+
+                                        <xsd:element name="Description" type="tns:Description_Type"
+
+                                                     minOccurs="1" maxOccurs="1" />
+
+                                        <xsd:element name="Starting_year" type="xsd:date" />
+
+                                        <xsd:element name="Ending_year" type="xsd:date"/>
+
+                                    </xsd:sequence>
+
+                                </xsd:complexType>
+
+                            </xsd:element>
+
+                        </xsd:sequence>
+
+                    </xsd:complexType>
+
+                </xsd:element>
+
+            </xsd:sequence>
+
+        </xsd:complexType>
+
+    </xsd:element>
+
+    <xsd:simpleType name="Industry_Type">
+
+        <xsd:restriction base="xsd:string">
+
+            <xsd:enumeration value="ICT"/>
+
+            <xsd:enumeration value="Electronics"/>
+
+            <xsd:enumeration value="Telecommunication"/>
+
+            <xsd:enumeration value="Computer Science"/>
+
+        </xsd:restriction>
+
+    </xsd:simpleType>
+
+    <xsd:simpleType name="Description_Type">
+
+        <xsd:restriction base="xsd:string">
+
+            <xsd:maxLength value="1000"/>
+
+        </xsd:restriction>
+
+    </xsd:simpleType>
+
+    <xsd:simpleType name="Designation_Type">
+
+        <xsd:restriction base="xsd:string">
+
+            <xsd:maxLength value="1000"/>
+
+        </xsd:restriction>
+
+    </xsd:simpleType>
+
+</xsd:schema>
