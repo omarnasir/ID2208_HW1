@@ -7,48 +7,48 @@
 			xmlns:tns="http://www.employmentservicecompany.org/transcript.xsd"
 			elementFormDefault="qualified">
 
-	<xsd:element name="transcript">
+	<xsd:element name="Transcript">
 
 		<xsd:complexType>
 
 			<xsd:sequence>
 
-				<xsd:element name="name" type="xsd:string" minOccurs="1"/>
+				<xsd:element name="Name" type="xsd:string" minOccurs="1"/>
 
 				<xsd:element name="StudentID" type="xsd:int" minOccurs="1"/>
 
-				<xsd:element name="university" type="xsd:string" minOccurs="1"/>
+				<xsd:element name="University" type="xsd:string" minOccurs="1"/>
 
-				<xsd:element name="degree" type="xsd:string" />
+				<xsd:element name="Degree" type="xsd:string" />
 
 				<xsd:element name="Startingyear" type="tns:StartingyearType" />
 
 				<xsd:element name="Endingyear" type="tns:EndingyearType" />
 
-				<xsd:element name="courses">
+				<xsd:element name="Courses">
 
 					<xsd:complexType>
 
 						<xsd:sequence>
 
-							<xsd:element name="course" minOccurs="1" maxOccurs="30">
+							<xsd:element name="Course" minOccurs="1" maxOccurs="30">
 
 								<xsd:complexType>
 
 									<xsd:sequence>
-										<xsd:element name="code" type="tns:CodeType"
+										<xsd:element name="Code" type="tns:CodeType"
 
 													 minOccurs="1" maxOccurs="1" />
 
-										<xsd:element name="name" type="xsd:string"
+										<xsd:element name="Name" type="xsd:string"
 
 													 minOccurs="1" maxOccurs="1" />
 
-										<xsd:element name="grade" type="tns:GradeType"
+										<xsd:element name="Grade" type="tns:GradeType"
 
 													 minOccurs="1" maxOccurs="1" />
 
-										<xsd:element name="credits" type="tns:GreditsType"
+										<xsd:element name="Credits" type="tns:GreditsType"
 
 													 minOccurs="1" maxOccurs="1" />
 
