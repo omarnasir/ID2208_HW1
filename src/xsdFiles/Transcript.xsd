@@ -1,138 +1,68 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema"
-<<<<<<< HEAD:src/xsdFiles/Transcript.xsd
 	targetNamespace="http://www.employmentservicecompany.org/transcript.xsd"
+	xmlns:tns="http://www.employmentservicecompany.org/transcript.xsd"
 	elementFormDefault="qualified">
-	<xsd:element name="transcript">
-=======
-
-			targetNamespace="http://www.employmentservicecompany.org/transcript.xsd"
-
-			xmlns:tns="http://www.employmentservicecompany.org/transcript.xsd"
-			elementFormDefault="qualified">
-
 	<xsd:element name="Transcript">
-
->>>>>>> origin/master:xsdFiles/Transcript.xsd
 		<xsd:complexType>
-
 			<xsd:sequence>
-
-				<xsd:element name="Name" type="xsd:string" minOccurs="1"/>
-
-				<xsd:element name="StudentID" type="xsd:int" minOccurs="1"/>
-
-				<xsd:element name="University" type="xsd:string" minOccurs="1"/>
-
+				<xsd:element name="Name" type="xsd:string" minOccurs="1" />
+				<xsd:element name="StudentID" type="xsd:int" minOccurs="1" />
+				<xsd:element name="University" type="xsd:string"
+					minOccurs="1" />
 				<xsd:element name="Degree" type="xsd:string" />
-
 				<xsd:element name="Startingyear" type="tns:StartingyearType" />
-
 				<xsd:element name="Endingyear" type="tns:EndingyearType" />
-
 				<xsd:element name="Courses">
-
 					<xsd:complexType>
-
 						<xsd:sequence>
-
 							<xsd:element name="Course" minOccurs="1" maxOccurs="30">
-
 								<xsd:complexType>
-
 									<xsd:sequence>
 										<xsd:element name="Code" type="tns:CodeType"
-
-													 minOccurs="1" maxOccurs="1" />
-
+											minOccurs="1" maxOccurs="1" />
 										<xsd:element name="Name" type="xsd:string"
-
-													 minOccurs="1" maxOccurs="1" />
-
+											minOccurs="1" maxOccurs="1" />
 										<xsd:element name="Grade" type="tns:GradeType"
-
-													 minOccurs="1" maxOccurs="1" />
-
+											minOccurs="1" maxOccurs="1" />
 										<xsd:element name="Credits" type="tns:GreditsType"
-
-													 minOccurs="1" maxOccurs="1" />
-
-
+											minOccurs="1" maxOccurs="1" />
 									</xsd:sequence>
-
 								</xsd:complexType>
-
 							</xsd:element>
-
 						</xsd:sequence>
-
 					</xsd:complexType>
-
 				</xsd:element>
-
 			</xsd:sequence>
-
 		</xsd:complexType>
-
 	</xsd:element>
-
 	<xsd:simpleType name="StartingyearType">
-
 		<xsd:restriction base="xsd:integer">
-
-			<xsd:minInclusive value="1900"/>
-
-			<xsd:maxInclusive value="2017"/>
-
+			<xsd:minInclusive value="1900" />
+			<xsd:maxInclusive value="2017" />
 		</xsd:restriction>
-
 	</xsd:simpleType>
-
 	<xsd:simpleType name="EndingyearType">
-
 		<xsd:restriction base="xsd:integer">
-
-			<xsd:minInclusive value="1900"/>
-
-			<xsd:maxInclusive value="2017"/>
-
+			<xsd:minInclusive value="1900" />
+			<xsd:maxInclusive value="2017" />
 		</xsd:restriction>
-
 	</xsd:simpleType>
-
 	<xsd:simpleType name="CodeType">
-
 		<xsd:restriction base="xsd:string">
-
 			<xsd:pattern value="[A-Z]{2}[0-9]{4}" />
-
 		</xsd:restriction>
-
 	</xsd:simpleType>
-
 	<xsd:simpleType name="GradeType">
-
 		<xsd:restriction base="xsd:string">
-
 			<xsd:pattern value="[A-F]" />
-
 		</xsd:restriction>
-
 	</xsd:simpleType>
-
-
 	<xsd:simpleType name="GreditsType">
-
 		<xsd:restriction base="xsd:decimal">
-
-			<xsd:minInclusive value="1.0"/>
-
-			<xsd:maxInclusive value="5.0"/>
-
-
+			<xsd:minInclusive value="1.0" />
+			<xsd:maxInclusive value="5.0" />
 		</xsd:restriction>
-
 	</xsd:simpleType>
-
 </xsd:schema>
