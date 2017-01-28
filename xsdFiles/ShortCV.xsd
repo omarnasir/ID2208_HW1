@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+	targetNamespace="http://www.employmentservicecompany.org/shortcv.xsd"
+	xmlns:tns="http://www.employmentservicecompany.org/shortcv.xsd"
+	elementFormDefault="qualified">
+	<xsd:element name="shortcv">
+		<xsd:complexType>
+			<xsd:sequence>
+				<xsd:element name="name" type="xsd:string" />
+				<xsd:element name="phone" type="xsd:integer" />
+				<xsd:element name="age" type="tns:ageType" />
+				<xsd:element name="gender" type="tns:genderType" />
+				<xsd:element name="email" type="tns:emailType" />
+				<xsd:element name="prefLocation" type="xsd:string" />
+				<xsd:element name="location" type="tns:emailType" />
+				<xsd:element name="objective" type="tns:emailType" />
+				<xsd:element name="tarIndustry" type="xsd:string" />
+				<xsd:element name="language" minOccurs="0" maxOccurs="5"/>
+				<xsd:element name="skills" minOccurs="0" maxOccurs="5"/>
+				<xsd:element name="references" type="xsd:string" />
+			</xsd:sequence>
+		</xsd:complexType>
+	</xsd:element>
+
+
+	<xsd:simpleType name="ageType">
+		<xsd:restriction base="xsd:integer">
+			<xsd:minInclusive value="0" />
+			<xsd:maxInclusive value="100" />
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:simpleType name="genderType">
+		<xsd:restriction base="xsd:string">
+			<xsd:pattern value="male|female" />
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:simpleType name="emailType">
+		<xsd:restriction base="xsd:string">
+			<xsd:pattern value="[^@]+@[^\.]+\..+" />
+		</xsd:restriction>
+	</xsd:simpleType>
+</xsd:schema>
