@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema"
 	targetNamespace="http://www.employmentservicecompany.org/transcript.xsd"
-	xmlns:tns="http://www.employmentservicecompany.org/transcript.xsd"
 	elementFormDefault="qualified">
 	<xsd:element name="transcript">
 		<xsd:complexType>

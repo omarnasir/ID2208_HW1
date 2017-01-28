@@ -1,23 +1,31 @@
 package dtoObjects;
 
 public class CompanyInfo {
+	private String CompanyID;
 	private String CompanyName;
-	private Integer RegistrationNumber;
+	private String RegistrationNumber;
 	private String Industry;
 	private String Description;
 	private Integer Size;
 	private String location;
+	
+	public String getCompanyID() {
+		return CompanyID;
+	}
+	public void setCompanyID(String companyID) {
+		CompanyID = companyID;
+	}
 	public String getCompanyName() {
 		return CompanyName;
 	}
 	public void setCompanyName(String companyName) {
 		CompanyName = companyName;
 	}
-	public Integer getRegistrationNumber() {
+	public String getRegistrationNumber() {
 		return RegistrationNumber;
 	}
-	public void setRegistrationNumber(Integer registrationNumber) {
-		RegistrationNumber = registrationNumber;
+	public void setRegistrationNumber(String registrationNumber) {
+		this.RegistrationNumber = registrationNumber;
 	}
 	public String getIndustry() {
 		return Industry;

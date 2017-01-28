@@ -1,9 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<cmp:companyinfo xmlns:cmp="http://www.employmentservicecompany.org/companyinfo.xsd" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.employmentservicecompany.org/companyinfo.xsd ../xsdFiles/CompanyInfo.xsd ">
-  <cmp:companyName>ICT Company</cmp:companyName>
-  <cmp:registrationNumber>2016-112233</cmp:registrationNumber>
-  <cmp:industry>ICT</cmp:industry>
-  <cmp:description>Provides back-end cloud hosted web services.</cmp:description>
-  <cmp:size>100</cmp:size>
-  <cmp:location>Stockholm</cmp:location>
-</cmp:companyinfo>
