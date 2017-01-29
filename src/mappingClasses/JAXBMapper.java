@@ -1,29 +1,29 @@
 package mappingClasses;
 
+import java.io.File;
+
 import javax.xml.bind.JAXBContext;
 import javax.xml.bind.JAXBException;
 import javax.xml.bind.Unmarshaller;
-import javax.xml.bind.annotation.XmlRootElement;
-import javax.xml.stream.XMLStreamReader;
 
 import dtoObjects.ShortCV;
 
-@XmlRootElement(name="cv:shortcv")
 public class JAXBMapper {
 	private ShortCV shortCVObj;
-	
-	public ShortCV main(XMLStreamReader xsr) {
 
-		 try {
+	public ShortCV main(File shortCVXML) {
+
+		try {
 			JAXBContext jaxbContext = JAXBContext.newInstance(ShortCV.class);
 
 			Unmarshaller jaxbUnmarshaller = jaxbContext.createUnmarshaller();
-			shortCVObj = (ShortCV) jaxbUnmarshaller.unmarshal(xsr);
+
+			shortCVObj = (ShortCV) jaxbUnmarshaller.unmarshal(shortCVXML);
 			System.out.println(shortCVObj);
 
-		  } catch (JAXBException e) {
+		} catch (JAXBException e) {
 			e.printStackTrace();
-		  }
-			return shortCVObj;
 		}
+		return shortCVObj;
+	}
 }
