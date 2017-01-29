@@ -1,13 +1,12 @@
-import java.util.Date;
-
 public class Record {
 
     private String Company_Name;
     private String Industry;
     private String Designation;
     private String Description;
-    private Date startingYear;
-    private Date endingtear;
+    private String StartingYear;
+    private String Endingtear;
+
 
     public String getCompany_Name() {
         return Company_Name;
@@ -25,12 +24,12 @@ public class Record {
         return Description;
     }
 
-    public Date getStartingYear() {
-        return startingYear;
+    public String getStartingYear() {
+        return StartingYear;
     }
 
-    public Date getEndingtear() {
-        return endingtear;
+    public String getEndingYear() {
+        return Endingtear;
     }
 
     public void setCompany_Name(String company_Name) {
@@ -49,12 +48,12 @@ public class Record {
         Description = description;
     }
 
-    public void setStartingYear(Date startingYear) {
-        this.startingYear = startingYear;
+    public void setStartingYear(String startingYear) {
+        this.StartingYear = startingYear;
     }
 
-    public void setEndingtear(Date endingtear) {
-        this.endingtear = endingtear;
+    public void setEndingYear(String endingtear) {
+        this.Endingtear = endingtear;
     }
 
 

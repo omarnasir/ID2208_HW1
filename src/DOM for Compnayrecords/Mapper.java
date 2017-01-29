@@ -7,8 +7,6 @@ import javax.xml.parsers.DocumentBuilderFactory;
 import javax.xml.parsers.ParserConfigurationException;
 import java.io.File;
 import java.io.IOException;
-import java.text.SimpleDateFormat;
-import java.util.Calendar;
 
 public class Mapper {
 
@@ -30,8 +28,6 @@ public class Mapper {
 
         Element root = doc.getDocumentElement();
         companyrecord.setName(root.getElementsByTagName("emp:Name").item(0).getFirstChild().getNodeValue());
-
-
         Record record = new Record();
 
         int numOfCRecords = root.getElementsByTagName("emp:Record").getLength();
@@ -41,16 +37,15 @@ public class Mapper {
             record.setIndustry(root.getElementsByTagName("emp:Industry").item(i).getFirstChild().getNodeValue());
             record.setDesignation(root.getElementsByTagName("emp:Designation").item(i).getFirstChild().getNodeValue());
             record.setDescription(root.getElementsByTagName("emp:Description").item(i).getFirstChild().getNodeValue());
+            record.setStartingYear(root.getElementsByTagName("emp:Starting_year").item(i).getFirstChild().getNodeValue());
+            record.setEndingYear(root.getElementsByTagName("emp:Ending_year").item(i).getFirstChild().getNodeValue());
             companyrecord.addRecord(record);
         }
-
         return companyrecord;
     }
-
     public String toString() {
 
         String result = "Name: " + companyrecord.getName() + "\n" +
-
                         "=========== RecordS ===========" + "\n";
         for (int i = 0; i < companyrecord.getRecordSize(); i++) {
             Record record = companyrecord.getRecord(i);
@@ -58,6 +53,8 @@ public class Mapper {
                           "Industry: " + record.getIndustry() + "\n" +
                           "Designation: " + record.getDesignation() + "\n" +
                           "Description: " + record.getDescription()+ "\n\n" +
+                          "Starting year: " + record.getStartingYear() + "\n" +
+                          "Ending year: " + record.getEndingYear() + "\n\n" +
                           "==============================" + "\n\n";
             }
         return result;
