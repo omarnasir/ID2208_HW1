@@ -7,6 +7,7 @@
         <xsl:value-of select="/Transcript/tran:Name"/>
       </xsl:element>
 
+     <xsl:element name="ns:CourseInfo">
       <xsl:for-each select="/Transcript/tran:Courses/tran:Course">
         <xsl:element name="ns:CourseName">
           <xsl:value-of select="tran:Name"/>
@@ -15,6 +16,7 @@
           <xsl:value-of select="//tran:Credits"/>
         </xsl:element>
       </xsl:for-each>
+     </xsl:element>
       <xsl:element name="ns:TotalGPA">
         <xsl:value-of select="sum(//tran:Credits)"/>
       </xsl:element>
