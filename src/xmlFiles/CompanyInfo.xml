@@ -21,4 +21,13 @@
 		<cmp:size>20</cmp:size>
 		<cmp:location>London</cmp:location>
 	</cmp:company>
+		<cmp:company>
+		<cmp:companyID>idvalue2</cmp:companyID>
+		<cmp:companyName>Yahou Company</cmp:companyName>
+		<cmp:registrationNumber>2016-100002</cmp:registrationNumber>
+		<cmp:industry>Telecommunication</cmp:industry>
+		<cmp:description>Provides telecommunication services.</cmp:description>
+		<cmp:size>200</cmp:size>
+		<cmp:location>Munich</cmp:location>
+	</cmp:company>
 </cmp:companyinfo>

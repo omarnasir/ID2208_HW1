@@ -1,5 +1,8 @@
-<tran:Transcript xmlns:tran="http://www.employmentservicecompany.org/transcript.xsd">
-  <tran:Name>Peter</tran:Name>
+<?xml version="1.0" encoding="UTF-8"?>
+<Transcript xmlns:tran="http://www.employmentservicecompany.org">
+<!-- 	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" -->
+<!-- 	xsi:schemaLocation="http://www.employmentservicecompany.org/transcript.xsd ../xsdFiles/Transcript.xsd "> -->
+  <tran:Name>Mr. XYZ</tran:Name>
   <tran:StudentID>333</tran:StudentID>
   <tran:University>WUT</tran:University>
   <tran:Degree>PHD</tran:Degree>
@@ -38,4 +41,4 @@
       <tran:Credits>5.0</tran:Credits>
     </tran:Course>
   </tran:Courses>
-</tran:Transcript>
+</Transcript>

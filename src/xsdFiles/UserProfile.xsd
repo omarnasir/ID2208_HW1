@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+	targetNamespace="http://www.employmentservicecompany.org/userprofile.xsd"
+	xmlns:tns="http://www.employmentservicecompany.org/userprofile.xsd"
+	elementFormDefault="qualified">
+	<xsd:element name="userprofile">
+		<xsd:complexType>
+			<xsd:sequence>
+				<xsd:element name="name" type="xsd:string" />
+				<xsd:element name="phone" type="xsd:integer" />
+				<xsd:element name="age" type="tns:ageType" minOccurs="0" />
+				<xsd:element name="gender" type="tns:genderType"
+					minOccurs="0" />
+				<xsd:element name="email" type="tns:emailType" />
+				<xsd:element name="prefLocation" type="xsd:string"
+					minOccurs="0" />
+				<xsd:element name="location" type="xsd:string" />
+				<xsd:element name="objective" type="xsd:string" />
+				<xsd:element name="tarIndustry" type="xsd:string" />
+				<xsd:element name="languages">
+					<xsd:complexType>
+						<xsd:sequence>
+							<xsd:element name="language" type="xsd:string"
+								minOccurs="0" maxOccurs="5" />
+						</xsd:sequence>
+					</xsd:complexType>
+				</xsd:element>
+				<xsd:element name="skills">
+					<xsd:complexType>
+						<xsd:sequence>
+							<xsd:element name="skill" type="xsd:string"
+								minOccurs="0" maxOccurs="5" />
+						</xsd:sequence>
+					</xsd:complexType>
+				</xsd:element>
+				<xsd:element name="references">
+					<xsd:complexType>
+						<xsd:sequence>
+							<xsd:element name="reference" type="xsd:string"
+								minOccurs="0" maxOccurs="5" />
+						</xsd:sequence>
+					</xsd:complexType>
+				</xsd:element>
+				<xsd:element name="workExperience">
+					<xsd:complexType>
+						<xsd:sequence>
+							<xsd:element name="companyName" type="xsd:string" />
+							<xsd:element name="Starting_year" type="xsd:date" />
+							<xsd:element name="Ending_year" type="xsd:date" />
+							<xsd:element name="Industry" type="tns:Industry_Type" />
+							<xsd:element name="Designation" type="tns:Designation_Type"/>
+						</xsd:sequence>
+					</xsd:complexType>
+				</xsd:element>
+				<xsd:element name="University" type="xsd:string"/>
+				<xsd:element name="Degree" type="xsd:string" />
+				<xsd:element name="Endingyear" type="tns:EndingyearType" />
+				<xsd:element name="gpa" type="xsd:double" />
+			</xsd:sequence>
+		</xsd:complexType>
+	</xsd:element>
+
+	<xsd:simpleType name="ageType">
+		<xsd:restriction base="xsd:integer">
+			<xsd:minInclusive value="0" />
+			<xsd:maxInclusive value="100" />
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:simpleType name="genderType">
+		<xsd:restriction base="xsd:string">
+			<xsd:pattern value="male|female" />
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:simpleType name="emailType">
+		<xsd:restriction base="xsd:string">
+			<xsd:pattern value="[^@]+@[^\.]+\..+" />
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:simpleType name="Industry_Type">
+		<xsd:restriction base="xsd:string">
+			<xsd:enumeration value="ICT" />
+			<xsd:enumeration value="Electronics" />
+			<xsd:enumeration value="Telecommunication" />
+			<xsd:enumeration value="Computer Science" />
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:simpleType name="Designation_Type">
+		<xsd:restriction base="xsd:string">
+			<xsd:maxLength value="1000" />
+		</xsd:restriction>
+	</xsd:simpleType>
+		<xsd:simpleType name="EndingyearType">
+		<xsd:restriction base="xsd:integer">
+			<xsd:minInclusive value="1900" />
+			<xsd:maxInclusive value="2017" />
+		</xsd:restriction>
+	</xsd:simpleType>
+</xsd:schema>

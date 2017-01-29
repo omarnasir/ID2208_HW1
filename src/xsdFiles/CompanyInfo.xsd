@@ -12,7 +12,7 @@
 							<xsd:element name="companyID" type="xsd:ID"/>
 							<xsd:element name="companyName" type="xsd:string" />
 							<xsd:element name="registrationNumber" type="tns:registrationNumberType" />
-							<xsd:element name="industry" type="xsd:string" />
+							<xsd:element name="industry" type="tns:IndustryType" />
 							<xsd:element name="description" type="tns:descriptionType"
 								minOccurs="0" />
 							<xsd:element name="size" type="tns:sizeType"
@@ -24,7 +24,15 @@
 			</xsd:sequence>
 		</xsd:complexType>
 	</xsd:element>
-
+	
+    <xsd:simpleType name="IndustryType">
+        <xsd:restriction base="xsd:string">
+            <xsd:enumeration value="ICT"/>
+            <xsd:enumeration value="Electronics"/>
+            <xsd:enumeration value="Telecommunication"/>
+            <xsd:enumeration value="Computer Science"/>
+        </xsd:restriction>
+    </xsd:simpleType>
 	<xsd:simpleType name="registrationNumberType">
 		<xsd:restriction base="xsd:string">
 			<xsd:pattern value="[0-9]{4}[-][0-9]{6}" /> <!-- Example: 2016-556677 -->

@@ -1,4 +1,6 @@
-public class Record {
+package dtoObjects;
+
+public class EmploymentRecordDetail {
 
     private String Company_Name;
     private String Industry;
@@ -6,7 +8,6 @@ public class Record {
     private String Description;
     private String StartingYear;
     private String Endingtear;
-
 
     public String getCompany_Name() {
         return Company_Name;

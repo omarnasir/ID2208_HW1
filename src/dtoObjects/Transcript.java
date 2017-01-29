@@ -1,6 +1,6 @@
-import java.util.ArrayList;
-import java.util.Date;
+package dtoObjects;
 
+import java.util.Date;
 
 public class Transcript {
 
@@ -9,25 +9,8 @@ public class Transcript {
     private String university;
     private String degree;
     private Date startingYear;
-    private Date endingtear;
-    private ArrayList<Course> courses;
-
-    public Transcript() {
-        this.courses = new ArrayList<Course>();
-    }
-
-    public Course getCourse(int num) {
-        return courses.get(num);
-    }
-
-    public int getCourseSize() {
-        return courses.size();
-    }
-
-
-    public void addCourse(Course course) {
-        courses.add(course);
-    }
+    private Date endingYear;
+    private double total_credits;
 
     public String getName() {
         return name;
@@ -69,11 +52,19 @@ public class Transcript {
         this.startingYear = startingYear;
     }
 
-    public Date getEndingtear() {
-        return endingtear;
+    public void setEndingYear(Date endingYear) {
+        this.endingYear = endingYear;
     }
 
-    public void setEndingtear(Date endingtear) {
-        this.endingtear = endingtear;
+    public Date getEndingYear() {
+        return endingYear;
+    }
+
+    public double getTotal_credits() {
+        return total_credits;
+    }
+
+    public void setTotal_credits(double total_credits) {
+        this.total_credits = total_credits;
     }
 }

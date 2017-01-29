@@ -1,3 +1,5 @@
+package dtoObjects;
+
 public class Course {
 
     private String code;

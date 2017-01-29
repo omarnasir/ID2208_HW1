@@ -20,7 +20,6 @@ public class SAXMapper {
 
 	private List<CompanyInfo> companyInfoListObj = new ArrayList<CompanyInfo>();
 	private List<String> companyNames = new ArrayList<String>();
-	private Integer indexCompanyNames = 0;
 
 	public List<CompanyInfo> mapperMethod(File xmlFileObj, List<String> companyNames) throws IOException {
 		SAXParserFactory factory = SAXParserFactory.newInstance();
@@ -71,6 +70,7 @@ public class SAXMapper {
 			this.elementStack.pop();
 			if (qName.equals("cmp:company")) {
 				CompanyInfo companyInfoObj = this.objectStack.pop();
+				if(companyInfoObj.getCompanyName() != null)
 				companyInfoListObj.add(companyInfoObj);
 			}
 			super.endElement(uri, localName, qName);
@@ -84,10 +84,16 @@ public class SAXMapper {
 			String currentElement = this.elementStack.peek();
 
 			if (currentElement.equals("cmp:companyName")) {
-				if (value.equals(companyNames.get(indexCompanyNames))) {
+				for(int i = 0; i < companyNames.size(); i++)
+				{
+				if (value.equals(companyNames.get(i))) {
 					CompanyInfo companyInfoObj = this.objectStack.peek();
 					companyInfoObj.setCompanyName(value);
 					companyExists = true;
+					break;
+				}
+				else
+					companyExists = false;
 				}
 			}
 
