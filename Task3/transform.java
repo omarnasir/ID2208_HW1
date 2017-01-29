@@ -25,7 +25,7 @@ public class transform {
 
         try {
 
-            FileWriter fw = new FileWriter("output.xml");
+            FileWriter fw = new FileWriter(" newtranscript.xml");
             TransformerFactory tFactory = TransformerFactory.newInstance();
             Transformer trasform = tFactory.newTransformer(xslt);
             trasform.transform(xml, new StreamResult(sw));
