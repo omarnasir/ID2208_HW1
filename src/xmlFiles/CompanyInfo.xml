@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<cmp:companyinfo
+	xmlns:cmp="http://www.employmentservicecompany.org/companyinfo.xsd"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.employmentservicecompany.org/companyinfo.xsd ../xsdFiles/CompanyInfo.xsd ">
+	<cmp:company>
+		<cmp:companyID>idvalue0</cmp:companyID>
+		<cmp:companyName>Cloud Computing</cmp:companyName>
+		<cmp:registrationNumber>2016-100000</cmp:registrationNumber>
+		<cmp:industry>ICT</cmp:industry>
+		<cmp:description>Provides cloud infrastructure services.</cmp:description>
+		<cmp:size>100</cmp:size>
+		<cmp:location>Stockholm</cmp:location>
+	</cmp:company>
+	<cmp:company>
+		<cmp:companyID>idvalue1</cmp:companyID>
+		<cmp:companyName>Designers Hub</cmp:companyName>
+		<cmp:registrationNumber>2016-100001</cmp:registrationNumber>
+		<cmp:industry>ICT</cmp:industry>
+		<cmp:description>Provides front-end web designing solution.</cmp:description>
+		<cmp:size>20</cmp:size>
+		<cmp:location>London</cmp:location>
+	</cmp:company>
+</cmp:companyinfo>

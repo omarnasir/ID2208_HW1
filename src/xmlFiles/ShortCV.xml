@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<cv:shortcv xmlns:cv="http://www.employmentservicecompany.org/shortcv.xsd"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.employmentservicecompany.org/shortcv.xsd ../xsdFiles/ShortCV.xsd ">
+	<cv:name>Master Cindy</cv:name>
+	<cv:phone>0765223344</cv:phone>
+	<cv:age>20</cv:age>
+	<cv:gender>female</cv:gender>
+	<cv:email>example@gmail.com</cv:email>
+	<cv:prefLocation>Stockholm</cv:prefLocation>
+	<cv:location>London</cv:location>
+	<cv:objective>To work at a software development company</cv:objective>
+	<cv:tarIndustry>ICT</cv:tarIndustry>
+	<cv:languages>
+		<cv:language>English</cv:language>
+		<cv:language>Swedish</cv:language>
+	</cv:languages>
+	<cv:skills>
+		<cv:skill>C++</cv:skill>
+		<cv:skill>Java</cv:skill>
+	</cv:skills>
+	<cv:references>
+		<cv:reference>Manager Mr. XYZ at ABC Corp</cv:reference>
+	</cv:references>
+</cv:shortcv>
