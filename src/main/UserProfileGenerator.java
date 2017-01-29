@@ -19,9 +19,13 @@ public class UserProfileGenerator {
 		ClassLoader classLoader = ClassLoader.getSystemClassLoader();
 		File companyXML = new File(classLoader.getResource("./xmlFiles/CompanyInfo.xml").getFile());
 		File shortCVXML = new File(classLoader.getResource("./xmlFiles/ShortCV.xml").getFile());
-				
+		//Add File reference to Company Record.xml
+		//Add File reference to Transcript.xml		
+		
 		SAXMapper saxMapper = new SAXMapper();
 		JAXBMapper jaxbMapper = new JAXBMapper();
+		//Add Mapper for CompanyRecord
+		//Add Mapper for Transcript
 		try {
 			companyInfoObj = saxMapper.mapperMethod(companyXML, companyNames);
 			companyInfoObj.size();

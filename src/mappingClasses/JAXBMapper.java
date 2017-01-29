@@ -19,7 +19,6 @@ public class JAXBMapper {
 			Unmarshaller jaxbUnmarshaller = jaxbContext.createUnmarshaller();
 
 			shortCVObj = (ShortCV) jaxbUnmarshaller.unmarshal(shortCVXML);
-			System.out.println(shortCVObj);
 
 		} catch (JAXBException e) {
 			e.printStackTrace();
