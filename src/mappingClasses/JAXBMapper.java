@@ -11,7 +11,7 @@ import dtoObjects.ShortCV;
 public class JAXBMapper {
 	private ShortCV shortCVObj;
 
-	public ShortCV main(File shortCVXML) {
+	public ShortCV mapperMethod(File shortCVXML) {
 
 		try {
 			JAXBContext jaxbContext = JAXBContext.newInstance(ShortCV.class);
