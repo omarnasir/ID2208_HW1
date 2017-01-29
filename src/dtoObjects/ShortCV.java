@@ -12,7 +12,7 @@ import javax.xml.bind.annotation.XmlRootElement;
 public class ShortCV {
 
 	@XmlElement(name = "name")
-	String name;
+	private String name;
 	@XmlElement(name = "phone")
 	private Integer phone;
 	@XmlElement(name = "age")
@@ -131,5 +131,4 @@ public class ShortCV {
 	public void setReferences(List<ShortCVReferences> references) {
 		this.references = references;
 	}
-
 }
