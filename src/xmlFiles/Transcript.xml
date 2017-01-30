@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<Transcript xmlns:tran="http://www.employmentservicecompany.org">
-<!-- 	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" -->
-<!-- 	xsi:schemaLocation="http://www.employmentservicecompany.org/transcript.xsd ../xsdFiles/Transcript.xsd "> -->
-  <tran:Name>Mr. XYZ</tran:Name>
+<Transcript xmlns:tran="http://www.employmentservicecompany.org"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+ 	xsi:schemaLocation="http://www.employmentservicecompany.org/transcript.xsd ../xsdFiles/Transcript.xsd ">
+  <tran:Name>Peter</tran:Name>
   <tran:StudentID>333</tran:StudentID>
   <tran:University>WUT</tran:University>
   <tran:Degree>PHD</tran:Degree>
@@ -13,31 +13,31 @@
     <tran:Course>
       <tran:Code>DH9900</tran:Code>
       <tran:Name>Signal Theory</tran:Name>
-      <tran:Grade>A</tran:Grade>
+      <tran:Grade>3.5</tran:Grade>
       <tran:Credits>5.0</tran:Credits>
     </tran:Course>
     <tran:Course>
       <tran:Code>CV9999</tran:Code>
       <tran:Name>Computer Vision</tran:Name>
-      <tran:Grade>B</tran:Grade>
+      <tran:Grade>4</tran:Grade>
       <tran:Credits>4.5</tran:Credits>
     </tran:Course>
     <tran:Course>
       <tran:Code>ML9990</tran:Code>
       <tran:Name>Machine learning</tran:Name>
-      <tran:Grade>C</tran:Grade>
+      <tran:Grade>5</tran:Grade>
       <tran:Credits>4.0</tran:Credits>
     </tran:Course>
     <tran:Course>
       <tran:Code>PB2211</tran:Code>
       <tran:Name>Programming Basic</tran:Name>
-      <tran:Grade>A</tran:Grade>
+      <tran:Grade>5</tran:Grade>
       <tran:Credits>5.0</tran:Credits>
     </tran:Course>
     <tran:Course>
       <tran:Code>WA0099</tran:Code>
       <tran:Name>Web Application</tran:Name>
-      <tran:Grade>A</tran:Grade>
+      <tran:Grade>5</tran:Grade>
       <tran:Credits>5.0</tran:Credits>
     </tran:Course>
   </tran:Courses>
