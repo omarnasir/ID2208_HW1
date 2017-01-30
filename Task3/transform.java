@@ -16,7 +16,7 @@ public class transform {
 
     public static void main(String args[]) {
         Source xml = new StreamSource(new File("Transcript.xml"));
-        Source xslt = new StreamSource("transform.xsl");
+        Source xslt = new StreamSource("transform1.xsl");
         convertXMLToHTML(xml, xslt);
     }
 
@@ -25,7 +25,7 @@ public class transform {
 
         try {
 
-            FileWriter fw = new FileWriter(" newtranscript.xml");
+            FileWriter fw = new FileWriter(" Newtranscript.xml");
             TransformerFactory tFactory = TransformerFactory.newInstance();
             Transformer trasform = tFactory.newTransformer(xslt);
             trasform.transform(xml, new StreamResult(sw));
