@@ -1,8 +1,10 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<userProfile xmlns="http://www.employmentservicecompany.org/shortcv.xsd">
+<userProfile xmlns="http://www.employmentservicecompany.org/userprofile.xsd"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.employmentservicecompany.org/userprofile.xsd ../xsdFiles/UserProfile.xsd ">
     <degree>PHD</degree>
-    <endingyear>1904-01-29T21:19:42.006+01:00</endingyear>
-    <gpa>23.5</gpa>
+    <endingyear>1904-01-31T00:14:29.749+01:00</endingyear>
+    <gpa>4.0</gpa>
     <recordObj>
         <company_Name>Yahou Company</company_Name>
         <designation>TEL2006-112233</designation>

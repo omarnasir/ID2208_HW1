@@ -2,7 +2,7 @@
 <Transcript xmlns:tran="http://www.employmentservicecompany.org"
 	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
  	xsi:schemaLocation="http://www.employmentservicecompany.org/transcript.xsd ../xsdFiles/Transcript.xsd ">
-  <tran:Name>Peter</tran:Name>
+  <tran:Name>Mr. XYZ</tran:Name>
   <tran:StudentID>333</tran:StudentID>
   <tran:University>WUT</tran:University>
   <tran:Degree>PHD</tran:Degree>

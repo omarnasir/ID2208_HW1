@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <xsl:stylesheet xmlns:xsl="http://www.w3.org/1999/XSL/Transform" version="1.0" xmlns:ns="http://www.GPA.com" xmlns:tran="http://www.employmentservicecompany.org">
     <xsl:template match="/">
-
         <xsl:element name="ns:GPA">
 
             <xsl:element name="ns:StudentName">
@@ -51,7 +50,7 @@
                 </totalcredits>
             </xsl:variable>
 
-            <xsl:element name="ns:TOTALGPA">
+            <xsl:element name="ns:TotalGPA">
                 <xsl:variable name="ns:result" select="nodeset($ns:tempval)"/>
                 <xsl:value-of select="round($ns:result/totalmarks div $ns:result/totalcredits)" />
             </xsl:element>
