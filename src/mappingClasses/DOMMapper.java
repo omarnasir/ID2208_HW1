@@ -44,7 +44,7 @@ public class DOMMapper {
 	        cal.set(Calendar.YEAR, Integer.parseInt(root.getElementsByTagName("ns:Endingyear").item(0).getFirstChild().getNodeValue()));
 	        transcript.setEndingYear(cal.getTime());
 	
-	        transcript.setTotal_credits(Double.parseDouble(root.getElementsByTagName("ns:TotalGPA").item(0).getFirstChild().getNodeValue()));
+	        transcript.setTotalGPA(Double.parseDouble(root.getElementsByTagName("ns:TotalGPA").item(0).getFirstChild().getNodeValue()));
 	
 	        return transcript;
    		}

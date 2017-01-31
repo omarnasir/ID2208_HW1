@@ -15,7 +15,7 @@
 				<xsd:element name="location" type="xsd:string" 	/>
 				<xsd:element name="objective" type="xsd:string" />
 				<xsd:element name="tarIndustry" type="xsd:string" />
-				<xsd:element name="languages">
+				<xsd:element name="languages" >
 					<xsd:complexType>
 						<xsd:sequence>
 							<xsd:element name="language" type="xsd:string" minOccurs="0"

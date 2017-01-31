@@ -28,15 +28,15 @@
         </xsd:complexType>
     </xsd:element>
     	<xsd:simpleType name="StartingyearType">
-		<xsd:restriction base="xsd:dateTime">
-			<xsd:minInclusive value="1900-01-01T00:00:00" />
-			<xsd:maxInclusive value="2100-01-01T00:00:00" />
+		<xsd:restriction base="xsd:date">
+			<xsd:minInclusive value="1900-01-01" />
+			<xsd:maxInclusive value="2100-01-01" />
 		</xsd:restriction>
 	</xsd:simpleType>
 	<xsd:simpleType name="EndingyearType">
-		<xsd:restriction base="xsd:dateTime">
-			<xsd:minInclusive value="1900-01-01T00:00:00" />
-			<xsd:maxInclusive value="2100-01-01T00:00:00" />
+		<xsd:restriction base="xsd:date">
+			<xsd:minInclusive value="1900-01-01" />
+			<xsd:maxInclusive value="2100-01-01" />
 		</xsd:restriction>
 	</xsd:simpleType>
     <xsd:simpleType name="Description_Type">

@@ -33,7 +33,7 @@
 						</xsd:sequence>
 					</xsd:complexType>
 				</xsd:element>
-				<xsd:element name="references">
+				<xsd:element name="references" >
 					<xsd:complexType>
 						<xsd:sequence>
 							<xsd:element name="reference" type="xsd:string"
@@ -41,7 +41,7 @@
 						</xsd:sequence>
 					</xsd:complexType>
 				</xsd:element>
-				<xsd:element name="workExperience">
+				<xsd:element name="workExperience" minOccurs="0" maxOccurs="5">
 					<xsd:complexType>
 						<xsd:sequence>
 							<xsd:element name="companyName" type="xsd:string" />
@@ -49,6 +49,7 @@
 							<xsd:element name="Ending_year" type="xsd:date" />
 							<xsd:element name="Industry" type="tns:Industry_Type" />
 							<xsd:element name="Designation" type="tns:Designation_Type"/>
+							<xsd:element name="Location" type="xsd:string" />
 						</xsd:sequence>
 					</xsd:complexType>
 				</xsd:element>

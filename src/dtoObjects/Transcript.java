@@ -10,7 +10,7 @@ public class Transcript {
     private String degree;
     private Date startingYear;
     private Date endingYear;
-    private double total_credits;
+    private double TotalGPA;
 
     public String getName() {
         return name;
@@ -60,11 +60,11 @@ public class Transcript {
         return endingYear;
     }
 
-    public double getTotal_credits() {
-        return total_credits;
+    public double getTotalGPA() {
+        return TotalGPA;
     }
 
-    public void setTotal_credits(double total_credits) {
-        this.total_credits = total_credits;
+    public void setTotalGPA(double TotalGPA) {
+        this.TotalGPA = TotalGPA;
     }
 }

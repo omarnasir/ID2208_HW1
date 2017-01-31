@@ -2,9 +2,10 @@ package main;
 
 import java.io.File;
 import java.io.IOException;
-import java.util.ArrayList;
+import java.text.ParseException;
 import java.util.List;
 
+import javax.xml.bind.DatatypeConverter;
 import javax.xml.parsers.ParserConfigurationException;
 import javax.xml.stream.XMLStreamException;
 import javax.xml.transform.stream.StreamSource;
@@ -12,17 +13,22 @@ import javax.xml.transform.stream.StreamSource;
 import org.xml.sax.SAXException;
 
 import dtoObjects.*;
+import dtoObjects.userprofile.*;
 import mappingClasses.*;
 
 public class UserProfileGenerator {
 
-	public static void main(String[] args) throws XMLStreamException, ParserConfigurationException, SAXException {
-		//This will come from Employment Records. Right now its static
+	@SuppressWarnings("deprecation")
+	public static void main(String[] args) throws XMLStreamException, ParserConfigurationException, SAXException, ParseException {
+
 		List<CompanyInfo> companyInfoObj;
 		ShortCV shortCVObj;
 		Transcript transcriptObj;
 		EmploymentRecord employmentRecordObj;
-		UserProfile userProfileObj = new UserProfile();
+		
+		dtoObjects.userprofile.ObjectFactory factory = new ObjectFactory();
+		dtoObjects.userprofile.Userprofile userObj = factory.createUserprofile();
+		
 		
 		ClassLoader classLoader = ClassLoader.getSystemClassLoader();
 		File companyXML = new File(classLoader.getResource("./xmlFiles/CompanyInfo.xml").getFile());
@@ -48,34 +54,59 @@ public class UserProfileGenerator {
 			
 			XSLTMapper.convertXMLToHTML(new StreamSource(transcriptXML), transcriptXSL, newTranscriptXMLpath);
 			transcriptObj = domMapper.parseTranscriptXML(new File(newTranscriptXMLpath), shortCVObj.getName());
-				
-			List<UserProfileWorkExperienceDetail> workExperienceObj = new ArrayList<UserProfileWorkExperienceDetail>();
+			
 			for(int i=0; i<employmentRecordObj.getRecordSize(); i++)
 			{
-				UserProfileWorkExperienceDetail obj = new UserProfileWorkExperienceDetail();
-				obj.setCompany_Name(employmentRecordObj.getRecord(i).getCompany_Name());
-				obj.setDesignation(employmentRecordObj.getRecord(i).getDesignation());
-				obj.setStartingYear(employmentRecordObj.getRecord(i).getStartingYear());
-				obj.setEndingtear(employmentRecordObj.getRecord(i).getEndingYear());
+				Userprofile.WorkExperience workExpObj = factory.createUserprofileWorkExperience();
+				workExpObj.setCompanyName(employmentRecordObj.getRecord(i).getCompany_Name());
+				workExpObj.setDesignation(employmentRecordObj.getRecord(i).getDesignation());
+				workExpObj.setStartingYear(DatatypeConverter.parseDate(employmentRecordObj.getRecord(i).getStartingYear()).getTime());
+				workExpObj.setEndingYear(DatatypeConverter.parseDate(employmentRecordObj.getRecord(i).getEndingYear()).getTime());
 				for(int j=0; j<companyInfoObj.size(); j++)
 				{
 					if(employmentRecordObj.getRecord(i).getCompany_Name().equals(companyInfoObj.get(j).getCompanyName()))
-					obj.setIndustry(companyInfoObj.get(j).getIndustry());
-					obj.setLocation(companyInfoObj.get(j).getLocation());
+					{
+						if(IndustryType.fromValue(companyInfoObj.get(j).getIndustry())!= null)
+						workExpObj.setIndustry(IndustryType.fromValue(companyInfoObj.get(j).getIndustry()));
+						workExpObj.setLocation(companyInfoObj.get(j).getLocation());
+					}
 				}
-				workExperienceObj.add(obj);
+				userObj.getWorkExperience().add(workExpObj);
 			}
 			
-			userProfileObj.setRecordObj(workExperienceObj);
+			userObj.setAge(shortCVObj.getAge());
+			userObj.setEmail(shortCVObj.getEmail());
+			userObj.setPhone(shortCVObj.getPhone());
+			userObj.setGender(shortCVObj.getGender());
+			userObj.setTarIndustry(shortCVObj.getIndustry());
+			userObj.setLocation(shortCVObj.getLocation());
+			userObj.setName(shortCVObj.getName());
+			userObj.setObjective(shortCVObj.getObjective());
+			userObj.setPrefLocation(shortCVObj.getPrefLocation());
 			
-			userProfileObj.setShortCVObj(shortCVObj);
-			userProfileObj.setDegree(transcriptObj.getDegree());
-			userProfileObj.setGpa(transcriptObj.getTotal_credits());
-			userProfileObj.setUniversity(transcriptObj.getUniversity());
-			userProfileObj.setEndingyear(transcriptObj.getEndingYear());
+			//Convert between List Objects
+			for(int i=0; i<shortCVObj.getReferences().getReference().size(); i++)
+			{
+				userObj.getReferences().getReference().add(shortCVObj.getReferences().getReference().get(i));
+			}
+
+			for(int i=0; i<shortCVObj.getLanguages().getLanguage().size(); i++)
+			{
+				userObj.getLanguages().getLanguage().add(shortCVObj.getLanguages().getLanguage().get(i));
+			}
+			
+			for(int i=0; i<shortCVObj.getSkills().getSkill().size(); i++)
+			{
+				userObj.getSkills().getSkill().add(shortCVObj.getSkills().getSkill().get(i));
+			}
+
+			userObj.setDegree(transcriptObj.getDegree());
+			userObj.setGpa(transcriptObj.getTotalGPA());
+			userObj.setUniversity(transcriptObj.getUniversity());
+			userObj.setEndingyear( transcriptObj.getEndingYear().getYear());
 			
 			File outputXML = new File("./src/xmlFiles/UserProfile.xml");
-			boolean result = jaxbMapper.marshallerMethod(userProfileObj, outputXML);
+			boolean result = jaxbMapper.marshallerMethod(userObj, outputXML);
 			
 			if(result)
 				System.out.println("Success!");
