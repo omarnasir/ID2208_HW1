@@ -1,4 +1,4 @@
-package dtoObjects;
+package dataObjects;
 
 public class CompanyInfo {
 	private String CompanyID;

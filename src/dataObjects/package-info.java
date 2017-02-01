@@ -9,6 +9,6 @@
     namespace = "http://www.employmentservicecompany.org/shortcv.xsd",
     		elementFormDefault = javax.xml.bind.annotation.XmlNsForm.QUALIFIED)
 
-package dtoObjects;
+package dataObjects;
 
 import javax.xml.bind.annotation.XmlSchema;

@@ -7,8 +7,8 @@ import javax.xml.bind.JAXBException;
 import javax.xml.bind.Marshaller;
 import javax.xml.bind.Unmarshaller;
 
-import dtoObjects.ShortCV;
-import dtoObjects.userprofile.*;
+import dataObjects.ShortCV;
+import dataObjects.userprofile.*;
 
 public class JAXBMapper {
 	private ShortCV shortCVObj;

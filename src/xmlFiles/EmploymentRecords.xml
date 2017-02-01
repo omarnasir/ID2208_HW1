@@ -5,20 +5,15 @@
   <emp:Name>Mr. XYZ</emp:Name>
   <emp:Records>
     <!--1 to 30 repetitions:-->
-    <emp:Record>
+    <emp:Record Ending_year="2016-01-01" Starting_year="2007-12-10">
       <emp:Company_Name>Yahou Company</emp:Company_Name>
       <emp:Designation>TEL2006-112233</emp:Designation>
       <emp:Description>Provides telecommunication services</emp:Description>
-      <emp:Starting_year>2007-12-10</emp:Starting_year>
-      <emp:Ending_year>2016-01-01</emp:Ending_year>
     </emp:Record>
-    <emp:Record>
+    <emp:Record Ending_year="2017-01-01" Starting_year="2016-01-01">
       <emp:Company_Name>Cloud Computing</emp:Company_Name>
       <emp:Designation>ICT2016-112233</emp:Designation>
       <emp:Description>Provides back-end cloud hosted web services</emp:Description>
-      <emp:Starting_year>2016-01-01</emp:Starting_year>
-      <emp:Ending_year>2017-01-01</emp:Ending_year>
     </emp:Record>
-
   </emp:Records>
 </emp:employmentrecords>

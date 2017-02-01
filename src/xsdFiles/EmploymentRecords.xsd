@@ -1,33 +1,35 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema"
-            targetNamespace="http://www.employmentservicecompany.org/employmentrecords.xsd"
-            xmlns:tns="http://www.employmentservicecompany.org/employmentrecords.xsd"
-            elementFormDefault="qualified">
-    <xsd:element name="employmentrecords">
-        <xsd:complexType>
-            <xsd:sequence>
-                <xsd:element name="Name" type="xsd:string" minOccurs="1"/>
-                <xsd:element name="Records">
-                    <xsd:complexType>
-                        <xsd:sequence>
-                            <xsd:element name="Record" minOccurs="1" maxOccurs="30">
-                                <xsd:complexType>
-                                    <xsd:sequence>
-                                        <xsd:element name="Company_Name" type="xsd:string"/>
-                                        <xsd:element name="Designation" type="tns:Designation_Type"/>
-                                        <xsd:element name="Description" type="tns:Description_Type"/>
-                                        <xsd:element name="Starting_year" type="tns:StartingyearType"  />
-                                        <xsd:element name="Ending_year" type="tns:EndingyearType"/>
-                                    </xsd:sequence>
-                                </xsd:complexType>
-                            </xsd:element>
-                        </xsd:sequence>
-                    </xsd:complexType>
-                </xsd:element>
-            </xsd:sequence>
-        </xsd:complexType>
-    </xsd:element>
-    	<xsd:simpleType name="StartingyearType">
+	targetNamespace="http://www.employmentservicecompany.org/employmentrecords.xsd"
+	xmlns:tns="http://www.employmentservicecompany.org/employmentrecords.xsd"
+	elementFormDefault="qualified">
+	<xsd:element name="employmentrecords">
+		<xsd:complexType>
+			<xsd:sequence>
+				<xsd:element name="Name" type="xsd:string" minOccurs="1" />
+				<xsd:element name="Records">
+					<xsd:complexType>
+						<xsd:sequence>
+							<xsd:element name="Record" minOccurs="1" maxOccurs="30">
+								<xsd:complexType>
+									<xsd:sequence>
+										<xsd:element name="Company_Name" type="xsd:string" />
+										<xsd:element name="Designation" type="tns:Designation_Type" />
+										<xsd:element name="Description" type="tns:Description_Type" />
+									</xsd:sequence>
+									<xsd:attribute name="Starting_year" type="tns:StartingyearType" />
+									<xsd:attribute name="Ending_year" type="tns:EndingyearType" />
+								</xsd:complexType>
+							</xsd:element>
+						</xsd:sequence>
+					</xsd:complexType>
+				</xsd:element>
+			</xsd:sequence>
+		</xsd:complexType>
+	</xsd:element>
+	<xsd:attribute name="idref" type="xsd:IDREF" />
+	<xsd:attribute name="submitted" type="xsd:date" />
+	<xsd:simpleType name="StartingyearType">
 		<xsd:restriction base="xsd:date">
 			<xsd:minInclusive value="1900-01-01" />
 			<xsd:maxInclusive value="2100-01-01" />
@@ -39,14 +41,14 @@
 			<xsd:maxInclusive value="2100-01-01" />
 		</xsd:restriction>
 	</xsd:simpleType>
-    <xsd:simpleType name="Description_Type">
-        <xsd:restriction base="xsd:string">
-            <xsd:maxLength value="1000"/>
-        </xsd:restriction>
-    </xsd:simpleType>
-    <xsd:simpleType name="Designation_Type">
-        <xsd:restriction base="xsd:string">
-            <xsd:maxLength value="1000"/>
-        </xsd:restriction>
-    </xsd:simpleType>
+	<xsd:simpleType name="Description_Type">
+		<xsd:restriction base="xsd:string">
+			<xsd:maxLength value="1000" />
+		</xsd:restriction>
+	</xsd:simpleType>
+	<xsd:simpleType name="Designation_Type">
+		<xsd:restriction base="xsd:string">
+			<xsd:maxLength value="1000" />
+		</xsd:restriction>
+	</xsd:simpleType>
 </xsd:schema>

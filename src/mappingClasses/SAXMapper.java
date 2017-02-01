@@ -14,7 +14,7 @@ import org.xml.sax.Attributes;
 import org.xml.sax.SAXException;
 import org.xml.sax.helpers.DefaultHandler;
 
-import dtoObjects.CompanyInfo;
+import dataObjects.CompanyInfo;
 
 public class SAXMapper {
 

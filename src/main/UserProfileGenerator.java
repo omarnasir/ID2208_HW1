@@ -12,8 +12,8 @@ import javax.xml.transform.stream.StreamSource;
 
 import org.xml.sax.SAXException;
 
-import dtoObjects.*;
-import dtoObjects.userprofile.*;
+import dataObjects.*;
+import dataObjects.userprofile.*;
 import mappingClasses.*;
 
 public class UserProfileGenerator {
@@ -26,8 +26,8 @@ public class UserProfileGenerator {
 		Transcript transcriptObj;
 		EmploymentRecord employmentRecordObj;
 		
-		dtoObjects.userprofile.ObjectFactory factory = new ObjectFactory();
-		dtoObjects.userprofile.Userprofile userObj = factory.createUserprofile();
+		dataObjects.userprofile.ObjectFactory factory = new ObjectFactory();
+		dataObjects.userprofile.Userprofile userObj = factory.createUserprofile();
 		
 		
 		ClassLoader classLoader = ClassLoader.getSystemClassLoader();
@@ -60,6 +60,7 @@ public class UserProfileGenerator {
 				Userprofile.WorkExperience workExpObj = factory.createUserprofileWorkExperience();
 				workExpObj.setCompanyName(employmentRecordObj.getRecord(i).getCompany_Name());
 				workExpObj.setDesignation(employmentRecordObj.getRecord(i).getDesignation());
+				
 				workExpObj.setStartingYear(DatatypeConverter.parseDate(employmentRecordObj.getRecord(i).getStartingYear()).getTime());
 				workExpObj.setEndingYear(DatatypeConverter.parseDate(employmentRecordObj.getRecord(i).getEndingYear()).getTime());
 				for(int j=0; j<companyInfoObj.size(); j++)
@@ -116,6 +117,7 @@ public class UserProfileGenerator {
 		} catch (IOException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
+			System.out.println("Failure.");
 		}
 	}
 }

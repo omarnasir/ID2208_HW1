@@ -4,7 +4,7 @@ import org.w3c.dom.Document;
 import org.w3c.dom.Element;
 import org.xml.sax.SAXException;
 
-import dtoObjects.*;
+import dataObjects.*;
 
 import javax.xml.parsers.DocumentBuilder;
 import javax.xml.parsers.DocumentBuilderFactory;
@@ -72,8 +72,8 @@ public class DOMMapper {
 	            record.setCompany_Name(root.getElementsByTagName("emp:Company_Name").item(i).getFirstChild().getNodeValue());
 	            record.setDesignation(root.getElementsByTagName("emp:Designation").item(i).getFirstChild().getNodeValue());
 	            record.setDescription(root.getElementsByTagName("emp:Description").item(i).getFirstChild().getNodeValue());
-	            record.setStartingYear(root.getElementsByTagName("emp:Starting_year").item(i).getFirstChild().getNodeValue());
-	            record.setEndingYear(root.getElementsByTagName("emp:Ending_year").item(i).getFirstChild().getNodeValue());
+	            record.setStartingYear(root.getElementsByTagName("emp:Record").item(i).getAttributes().getNamedItem("Starting_year").getNodeValue());
+	            record.setEndingYear(root.getElementsByTagName("emp:Record").item(i).getAttributes().getNamedItem("Ending_year").getNodeValue());
 	            employmentRecord.addRecord(record);
 	        }
 	        return employmentRecord;

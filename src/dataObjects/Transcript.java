@@ -1,4 +1,4 @@
-package dtoObjects;
+package dataObjects;
 
 import java.util.Date;
 
